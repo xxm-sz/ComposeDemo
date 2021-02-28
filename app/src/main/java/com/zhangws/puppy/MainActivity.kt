@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.zhangws.puppy.bean.PuppyPost
+import com.zhangws.puppy.constrainlayout.learnConstraintSet
 import com.zhangws.puppy.ui.theme.color333333
 import com.zhangws.puppy.ui.theme.color999999
 import com.zhangws.puppy.ui.theme.colorEFEFEF
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Content()
+           learnConstraintSet()
         }
     }
 
@@ -51,9 +52,14 @@ class MainActivity : AppCompatActivity() {
 @Composable
 fun Content() {
     Column() {
-        Row(Modifier.height(50.dp).background(colorEFEFEF),verticalAlignment= Alignment.CenterVertically) {
+        Row(
+            Modifier
+                .height(50.dp)
+                .background(colorEFEFEF),verticalAlignment= Alignment.CenterVertically) {
             Text(
-                modifier = Modifier.fillMaxWidth().padding(start = 16.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 16.dp),
                 text = "狗狗关爱中心", textAlign = TextAlign.Left,
                 style = TextStyle(fontSize = 20.sp, color = color333333)
             )
